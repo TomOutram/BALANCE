@@ -1,8 +1,8 @@
-@forward 'abstracts';
+/*@forward 'abstracts';
 @forward 'base';
 @forward 'layout';
 
-/*
+
 
 // --------- breakpoints
 
@@ -18,40 +18,42 @@
 
 // --------- desktop styles
 
-.banner-wrapper {
-  background-color: #E4F0FF;
+*/
+
+.header {
+  background-color: #e4f0ff;
   border-bottom: 1px solid #000000;
-  background-image: url("/app/img/hero-circle.svg");
+  background-image: url('/app/img/hero-circle.svg');
   background-repeat: no-repeat;
   background-position-x: calc(100vw / 2);
   background-position-y: 50%;
   background-size: 1500px;
 }
 
-header {
+.header__nav-wrapper {
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #d7d6d6;
 }
 
-.header-content-wrapper {
+.header__nav {
   padding: 24px 32px;
   display: flex;
   justify-content: space-between;
   width: 1440px;
 }
 
-.social-container {
+.header__social-container {
   display: flex;
 }
 
-.balance-logo {
+.header__logo-image {
   width: 38px;
   height: 38px;
   margin-right: 8px;
 }
 
-.header-logo-text {
+.header__logo-text {
   color: #0072ef;
   line-height: 28px;
   margin: 0;
@@ -61,12 +63,12 @@ header {
   letter-spacing: 3px;
 }
 
-.header-logo-container {
+.header__logo-container {
   display: flex;
   align-items: center;
 }
 
-.social-logo {
+.header__social-logo {
   width: 32px;
   height: 32px;
   display: flex;
@@ -76,28 +78,28 @@ header {
   border-radius: 50%;
 }
 
-.social-logo:not(:last-child) {
+.social__logo:not(:last-child) {
   margin-right: 24px;
 }
 
-.hero-section {
+.header__hero-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.hero-content-wrapper {
+.header__hero {
   display: flex;
   flex-direction: column;
   padding: 0 32px;
   max-width: 1440px;
 }
 
-.hero-info-wrapper {
+.header__hero-cta-wrapper {
   display: flex;
-  padding: 64px 0 96px 0
+  padding: 64px 0 96px 0;
 }
 
-.hero-info {
+.header__hero-cta-container {
   margin-right: 60px;
   display: flex;
   flex-direction: column;
@@ -105,7 +107,7 @@ header {
   flex-basis: 45%;
 }
 
-.hero-title {
+.header__cta-headline {
   margin: 0 0 24px 0;
   color: #1b1b1b;
   font-family: 'Noto Serif', serif;
@@ -115,7 +117,7 @@ header {
   letter-spacing: 3px;
 }
 
-.hero-description {
+.header__cta-supporting {
   padding: 0 16px 48px 0;
   font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
@@ -126,7 +128,7 @@ header {
   margin: 0;
 }
 
-.hero-cta-btn {
+.header__cta-btn {
   margin: 0 0 24px 0;
   padding: 20px 40px;
   background-color: #0072ef;
@@ -141,7 +143,7 @@ header {
   align-self: flex-start;
 }
 
-.hero-cta-btn-info {
+.header__cta-btn-tip {
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
   font-size: 12px;
@@ -151,24 +153,28 @@ header {
   color: #878787;
 }
 
-.hero-image {
+.header__hero-image-wrapper {
   flex-basis: 55%;
 }
 
-.image-placeholder {
+.header__hero-image {
   border-radius: 10px;
   width: 90%;
   height: auto;
 }
 
-.affiliate-logo-container {
+.header__affiliates-wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 80px;
 }
 
-.affiliate-logo:not(:last-child) {
+.header__affiliate-logo:not(:last-child) {
   margin-right: 48px;
 }
 
-*/
+// for image testing only - delete after
+.img-test {
+  width: 50%;
+  margin: 150px 0;
+}

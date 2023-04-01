@@ -1,3 +1,5 @@
+@use '../abstracts';
+
 h1,
 h2,
 h3 {
@@ -6,7 +8,13 @@ h3 {
   margin-top: 0;
 }
 
+h1 {
+  // clamp 3 params: min size, preferred val (idea), max size
+  font-size: clamp(2rem, 1rem + 2.6vw, 3.5rem);
+}
+
 p {
+  font-size: 1rem;
   margin-top: 0;
 }
 

@@ -1,24 +1,9 @@
-/*@forward 'abstracts';
+@forward 'abstracts';
 @forward 'base';
 @forward 'layout';
+@forward 'components';
 
-
-
-// --------- breakpoints
-
-  mobile < 576
-  
-  inbtwn >= 576 
-  
-  tablet >= 768
-  
-  inbtwn >= 992
-  
-  desktop >= 1200
-
-// --------- desktop styles
-
-*/
+/*
 
 .header {
   background-color: #e4f0ff;
@@ -178,3 +163,5 @@
   width: 50%;
   margin: 150px 0;
 }
+
+*/

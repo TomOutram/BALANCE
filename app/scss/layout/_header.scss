@@ -1,5 +1,7 @@
+@use '../abstracts';
+
 .header {
-  // nav
+  // ----- nav
   &__nav-wrapper {
     display: flex;
     justify-content: center;
@@ -8,7 +10,13 @@
   &__nav {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0 8px;
+    padding: 1rem 0 0.5rem;
+    // media query
+    @include abstracts.breakpointUp(large) {
+      flex-basis: 100%;
+      padding: 1.5rem 2rem;
+      max-width: 90rem;
+    }
   }
 
   &__logo-container {
@@ -16,42 +24,13 @@
     align-items: center;
   }
 
-  &__logo-image {
-    width: 30px;
-    height: 30px;
-    margin-right: 6px;
-  }
-
-  &__logo-text {
-    color: #0072ef;
-    line-height: 23px;
-    margin: 0;
-    font-family: 'Noto Serif', serif;
-    font-size: 23px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-  }
-
   &__social-container {
     display: none;
-    // media query here
-    @media (min-width: 992px) {
+    // media query
+    @include abstracts.breakpointUp(large) {
       display: flex;
     }
   }
 
-  &__social-logo {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 2px #0072ef;
-    border-radius: 50%;
-  }
-
-  &__social-logo:not(:last-child) {
-    margin-right: 24px;
-  }
-  // hero
+  // ----- hero
 }

@@ -1,30 +1,161 @@
-/*@forward 'abstracts';
-@forward 'base';
-@forward 'layout';
-
-
-
-// --------- breakpoints
-
-  mobile < 576
-
-  inbtwn >= 576 
-
-  tablet >= 768
-
-  inbtwn >= 992
-
-  desktop >= 1200
-
-// --------- desktop styles
-
+/* 
+--------- breakpoints UP
+XS < 576px
+S >= 576px 
+M >= 768px
+L >= 992px
+XL >= 1200px
+--------- breakpoints DOWN
+XS < 575.98px
+S >= 575.98px 
+M >= 767.98px
+L >= 991.98px
+XL >= 1199.98px
 */
+:root {
+  --background-colour: hsl(0, 0%, 98%);
+  --text-colour: hsl(0, 0%, 10%);
+  --balance-blue: hsl(211, 100%, 47%);
+  --balance-blue-hover: hsl(220, 100%, 40%);
+  --white: hsl(0, 0%, 100%);
+  --headings-font: "Noto Serif", serif;
+  --body-font: "Noto Sans", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  background-color: var(--background-colour);
+  color: var(--text-colour);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 1rem + 2.6vw, 3.5rem);
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.header__nav-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0.5rem;
+}
+@media (min-width: 62em) {
+  .header__nav {
+    flex-basis: 100%;
+    padding: 1.5rem 2rem;
+    max-width: 90rem;
+  }
+}
+.header__logo-container {
+  display: flex;
+  align-items: center;
+}
+.header__social-container {
+  display: none;
+}
+@media (min-width: 62em) {
+  .header__social-container {
+    display: flex;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  background-color: var(--balance-blue);
+  color: var(--white);
+  font-family: var(--body-font);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  letter-spacing: 0.03rem;
+  border: none;
+  border-radius: 0.125rem;
+  align-self: flex-start;
+  transition: background-color 0.05s ease;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--balance-blue-hover);
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.3rem;
+  border: solid 0.125rem var(--balance-blue);
+  border-radius: 50%;
+}
+.social-link:not(:last-child) {
+  margin-right: 1.5rem;
+}
+.social-link__img {
+  width: 100%;
+  height: 100%;
+}
+
+.logo.balance-simple-img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+.logo.balance-simple-txt {
+  color: #0072ef;
+  line-height: 1.5rem;
+  margin: 0;
+  font-family: "Noto Serif", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+}
+
+/*
+
 .header {
   background-color: #e4f0ff;
   border-bottom: 1px solid #000000;
-  background-image: url("/app/img/hero-circle.svg");
+  background-image: url('/app/img/hero-circle.svg');
   background-repeat: no-repeat;
-  background-position-x: 50vw;
+  background-position-x: calc(100vw / 2);
   background-position-y: 50%;
   background-size: 1500px;
 }
@@ -56,7 +187,7 @@
   color: #0072ef;
   line-height: 28px;
   margin: 0;
-  font-family: "Noto Serif", serif;
+  font-family: 'Noto Serif', serif;
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -109,7 +240,7 @@
 .header__cta-headline {
   margin: 0 0 24px 0;
   color: #1b1b1b;
-  font-family: "Noto Serif", serif;
+  font-family: 'Noto Serif', serif;
   font-size: 60px;
   font-weight: 700;
   line-height: 70px;
@@ -118,7 +249,7 @@
 
 .header__cta-supporting {
   padding: 0 16px 48px 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 31.5px;
@@ -132,7 +263,7 @@
   padding: 20px 40px;
   background-color: #0072ef;
   color: #ffffff;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 18px;
@@ -144,7 +275,7 @@
 
 .header__cta-btn-tip {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 12px;
@@ -172,7 +303,10 @@
   margin-right: 48px;
 }
 
+// for image testing only - delete after
 .img-test {
   width: 50%;
   margin: 150px 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+*//*# sourceMappingURL=style.css.map */

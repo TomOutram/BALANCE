@@ -1,21 +1,34 @@
 @use '../abstracts';
 
 .header {
+  // ----- background
+  border-bottom: 1px solid #000000;
+  background-color: #e4f0ff;
+  @include abstracts.breakpointUp(medium) {
+    background-image: url('/app/img/hero-circle.svg');
+    background-repeat: no-repeat;
+    background-position-x: calc(100vw / 2);
+    background-position-y: 50%;
+    background-size: 1500px;
+  }
+
   // ----- nav
   &__nav-wrapper {
     display: flex;
     justify-content: center;
+    @include abstracts.breakpointUp(large) {
+      border-bottom: 1px solid hsl(0, 0%, 85%);
+    }
   }
 
   &__nav {
     display: flex;
     justify-content: space-between;
     padding: 1rem 0 0.5rem;
-    // media query
-    @include abstracts.breakpointUp(large) {
+    max-width: 90rem;
+    @include abstracts.breakpointUp(medium) {
       flex-basis: 100%;
       padding: 1.5rem 2rem;
-      max-width: 90rem;
     }
   }
 
@@ -26,11 +39,187 @@
 
   &__social-container {
     display: none;
-    // media query
-    @include abstracts.breakpointUp(large) {
+    @include abstracts.breakpointUp(medium) {
       display: flex;
     }
   }
 
   // ----- hero
+  &__hero-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    flex-basis: 100%;
+    max-width: 1440px;
+    @include abstracts.breakpointUp(small) {
+      padding: 0 32px;
+    }
+  }
+
+  &__hero-cta-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1rem 0 5rem 0;
+    @include abstracts.breakpointUp(medium) {
+      padding: 2.5rem 0 4rem 0;
+      flex-direction: row;
+    }
+    @include abstracts.breakpointUp(large) {
+      padding: 64px 0 80px 0;
+      flex-direction: row;
+    }
+  }
+
+  &__hero-cta-container {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 100%;
+    @include abstracts.breakpointUp(medium) {
+      flex-basis: 45%;
+      padding-right: 2rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      padding-right: 1.5rem;
+    }
+  }
+
+  &__hero-cta-headline {
+    margin: 2.5rem 0 1rem 0;
+    text-align: center;
+    @include abstracts.breakpointUp(medium) {
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__hero-cta-headline--sm {
+    display: block;
+    margin-top: 0;
+    @include abstracts.breakpointUp(medium) {
+      display: none;
+    }
+  }
+
+  &__hero-cta-headline--lg {
+    display: none;
+    @include abstracts.breakpointUp(medium) {
+      display: block;
+    }
+  }
+
+  &__cta-supporting-container {
+    margin-bottom: 1.5rem;
+    @include abstracts.breakpointUp(medium) {
+      margin-bottom: 2rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__cta-supporting {
+    flex-basis: 100%;
+    font-size: 0.875rem; // 14px
+    @include abstracts.breakpointUp(small) {
+      font-size: 1rem;
+    }
+    @include abstracts.breakpointUp(medium) {
+      font-size: 0.875rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      font-size: 1rem;
+    }
+  }
+
+  &__cta-btn {
+    align-self: center;
+    @include abstracts.breakpointUp(medium) {
+      align-self: start;
+    }
+  }
+
+  &__cta-btn-tip {
+    display: none;
+    @include abstracts.breakpointUp(medium) {
+      display: block;
+      margin-top: 1rem;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 12px;
+      letter-spacing: 1.2px;
+      color: #878787;
+    }
+    @include abstracts.breakpointUp(large) {
+      margin-top: 1.5rem;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 12px;
+    }
+  }
+
+  &__hero-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 100%;
+    @include abstracts.breakpointUp(medium) {
+      flex-basis: 55%;
+    }
+  }
+
+  &__hero-image {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: center;
+    @include abstracts.breakpointUp(xsmall) {
+      width: 90%;
+    }
+    @include abstracts.breakpointUp(small) {
+      width: 80%;
+    }
+    @include abstracts.breakpointUp(medium) {
+      width: 100%;
+    }
+    @include abstracts.breakpointUp(large) {
+      width: 90%;
+    }
+  }
+
+  &__affiliates-wrapper {
+    display: none;
+    @include abstracts.breakpointUp(medium) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__affiliate-logo {
+    height: 1.8rem;
+    width: auto;
+    @include abstracts.breakpointUp(large) {
+      height: 2.2rem;
+    }
+    &:not(:last-child) {
+      margin-right: 1.75rem;
+      @include abstracts.breakpointUp(large) {
+        margin-right: 48px;
+      }
+    }
+  }
 }

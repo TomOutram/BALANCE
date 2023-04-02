@@ -1,12 +1,12 @@
 /* 
 --------- breakpoints UP
-XS < 576px
+XS >= 375px
 S >= 576px 
 M >= 768px
 L >= 992px
 XL >= 1200px
 --------- breakpoints DOWN
-XS < 575.98px
+XS >= 374.98px
 S >= 575.98px 
 M >= 767.98px
 L >= 991.98px
@@ -14,6 +14,7 @@ XL >= 1199.98px
 */
 
 $breakpoints-up: (
+  'xsmall': 23.4375em,
   'small': 36em,
   'medium': 48em,
   'large': 62em,
@@ -21,6 +22,7 @@ $breakpoints-up: (
 );
 
 $breakpoints-down: (
+  'xsmall': 23.43625em,
   'small': 35.99875em,
   'medium': 47.99875em,
   'large': 61.99875em,
@@ -34,7 +36,7 @@ $breakpoints-down: (
 }
 
 @mixin breakpointDown($size) {
-  @media (min-width: map-get($breakpoints-down, $size)) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
     @content;
   }
 }

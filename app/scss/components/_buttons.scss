@@ -1,23 +1,36 @@
+@use '../abstracts';
+
 // --- main buttons
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 2rem;
   background-color: var(--balance-blue);
   color: var(--white);
   font-family: var(--body-font);
-  font-size: 1.125rem;
+  font-size: 0.875rem; //14px
   font-weight: 500;
   line-height: 1.125rem;
   letter-spacing: 0.03rem;
   border: none;
   border-radius: 0.125rem;
-  align-self: flex-start;
   transition: background-color 0.05s ease;
   &:hover {
     cursor: pointer;
     background-color: var(--balance-blue-hover);
+  }
+  @include abstracts.breakpointUp(small) {
+    font-size: 1.125rem; // 18px
+    padding: 1.25rem 2.5rem;
+  }
+  @include abstracts.breakpointUp(medium) {
+    font-size: 0.875rem; // 18px
+    padding: 1rem 2.25rem;
+  }
+  @include abstracts.breakpointUp(large) {
+    font-size: 1.125rem; // 18px
+    padding: 1.25rem 2.5rem;
   }
 }
 

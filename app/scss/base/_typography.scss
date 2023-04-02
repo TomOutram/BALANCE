@@ -10,12 +10,34 @@ h3 {
 
 h1 {
   // clamp 3 params: min size, preferred val (idea), max size
-  font-size: clamp(2rem, 1rem + 2.6vw, 3.5rem);
+  //font-size: clamp(2rem, 2rem + 2vw, 4rem);
+  color: #1b1b1b;
+  font-family: 'Noto Serif', serif;
+  letter-spacing: 3px;
+  font-size: 1.75rem;
+  @include abstracts.breakpointUp(xsmall) {
+    font-size: 2.5rem;
+  }
+  @include abstracts.breakpointUp(small) {
+    font-size: 3rem;
+  }
+  @include abstracts.breakpointUp(medium) {
+    font-size: 2.25rem;
+  }
+  @include abstracts.breakpointUp(large) {
+    font-size: 3.25rem;
+  }
 }
 
 p {
   font-size: 1rem;
-  margin-top: 0;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: #3b3b3b;
+  margin: 0 0 0.5rem 0;
 }
 
 a,

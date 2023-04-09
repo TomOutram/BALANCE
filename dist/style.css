@@ -18,6 +18,7 @@ XL >= 1199.98px
   --balance-blue: hsl(211, 100%, 47%);
   --balance-blue-hover: hsl(211, 100%, 40%);
   --white: hsl(0, 0%, 100%);
+  --dark-grey: hsl(0, 0%, 37%);
   --headings-font: "Noto Serif", serif;
   --body-font: "Noto Sans", sans-serif;
 }
@@ -181,12 +182,13 @@ a:active {
 }
 @media (min-width: 48em) {
   .header__hero-cta-container {
-    flex-basis: 45%;
+    flex-basis: 50%;
     padding-right: 2rem;
   }
 }
 @media (min-width: 62em) {
   .header__hero-cta-container {
+    flex-basis: 45%;
     padding-right: 1.5rem;
   }
 }
@@ -203,7 +205,7 @@ a:active {
 }
 @media (min-width: 62em) {
   .header__hero-cta-headline {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 .header__hero-cta-headline--sm {
@@ -233,27 +235,32 @@ a:active {
 }
 @media (min-width: 62em) {
   .header__cta-supporting-container {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 }
 .header__cta-supporting {
   flex-basis: 100%;
-  font-size: 2.25rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
 }
 @media (min-width: 36em) {
   .header__cta-supporting {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 48em) {
   .header__cta-supporting {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.1;
+    text-align: left;
   }
 }
 @media (min-width: 62em) {
   .header__cta-supporting {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
   }
 }
 .header__cta-btn {
@@ -272,18 +279,18 @@ a:active {
     display: block;
     margin-top: 1rem;
     font-family: "Noto Sans", sans-serif;
-    font-size: 10px;
+    font-size: 0.8rem;
     font-weight: 400;
-    line-height: 12px;
-    letter-spacing: 1.2px;
-    color: #878787;
+    line-height: 0.75rem;
+    letter-spacing: 0.075rem;
+    color: var(--dark-grey);
   }
 }
 @media (min-width: 62em) {
   .header__cta-btn-tip {
     margin-top: 1.5rem;
     font-family: "Noto Sans", sans-serif;
-    font-size: 12px;
+    font-size: 0.9rem;
   }
 }
 .header__hero-image-wrapper {
@@ -293,6 +300,11 @@ a:active {
   flex-basis: 100%;
 }
 @media (min-width: 48em) {
+  .header__hero-image-wrapper {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 62em) {
   .header__hero-image-wrapper {
     flex-basis: 55%;
   }

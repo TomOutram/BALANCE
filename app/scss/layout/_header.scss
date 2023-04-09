@@ -82,10 +82,11 @@
     justify-content: center;
     flex-basis: 100%;
     @include abstracts.breakpointUp(medium) {
-      flex-basis: 45%;
+      flex-basis: 50%;
       padding-right: 2rem;
     }
     @include abstracts.breakpointUp(large) {
+      flex-basis: 45%;
       padding-right: 1.5rem;
     }
   }
@@ -99,7 +100,7 @@
       margin-bottom: 1rem;
     }
     @include abstracts.breakpointUp(large) {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -124,22 +125,27 @@
       margin-bottom: 2rem;
     }
     @include abstracts.breakpointUp(large) {
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
   }
 
   &__cta-supporting {
     flex-basis: 100%;
-    font-size: 2.25rem; // 14px
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
     @include abstracts.breakpointUp(small) {
-      font-size: 1.75rem;
+      font-size: 1.4rem;
     }
     @include abstracts.breakpointUp(medium) {
-      font-size: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.1;
+      text-align: left;
     }
     @include abstracts.breakpointUp(large) {
-      font-size: 1.75rem;
+      font-size: 1.3rem;
+      line-height: 1.4;
     }
   }
 
@@ -156,16 +162,16 @@
       display: block;
       margin-top: 1rem;
       font-family: 'Noto Sans', sans-serif;
-      font-size: 10px;
+      font-size: 0.8rem;
       font-weight: 400;
-      line-height: 12px;
-      letter-spacing: 1.2px;
-      color: #878787;
+      line-height: 0.75rem;
+      letter-spacing: 0.075rem;
+      color: var(--dark-grey);
     }
     @include abstracts.breakpointUp(large) {
       margin-top: 1.5rem;
       font-family: 'Noto Sans', sans-serif;
-      font-size: 12px;
+      font-size: 0.9rem;
     }
   }
 
@@ -175,6 +181,9 @@
     align-items: center;
     flex-basis: 100%;
     @include abstracts.breakpointUp(medium) {
+      flex-basis: 50%;
+    }
+    @include abstracts.breakpointUp(large) {
       flex-basis: 55%;
     }
   }

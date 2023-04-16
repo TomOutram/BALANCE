@@ -1,12 +1,17 @@
 :root {
-  // --- colours
-  --background-colour: hsl(0, 0%, 98%);
+  // --- balance colours
   --text-colour: hsl(0, 0%, 10%);
   --balance-blue: hsl(211, 100%, 47%);
   --balance-blue-hover: hsl(211, 100%, 40%);
+  --light-blue: hsl(213, 100%, 95%);
+  // --- neutral colours
   --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 98%);
+  --black: hsl(0, 0%, 0%);
   --dark-grey: hsl(0, 0%, 37%);
+  --light-grey: hsl(0, 0%, 85%);
   // --- fonts
-  --headings-font: 'Noto Serif', serif;
+  --logo-font: 'Noto Serif', serif;
+  --heading-font: 'Source Serif Pro', serif;
   --body-font: 'Noto Sans', sans-serif;
 }

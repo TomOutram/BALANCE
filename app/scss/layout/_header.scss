@@ -2,14 +2,14 @@
 
 .header {
   // ----- background
-  border-bottom: 1px solid #000000;
-  background-color: #e4f0ff;
+  border-bottom: 1px solid var(--black);
+  background-color: var(--light-blue);
   @include abstracts.breakpointUp(medium) {
     background-image: url('/app/img/hero-circle.svg');
     background-repeat: no-repeat;
     background-position-x: calc(100vw / 2);
     background-position-y: 50%;
-    background-size: 1500px;
+    background-size: 93.75rem;
   }
 
   // ----- nav
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     @include abstracts.breakpointUp(large) {
-      border-bottom: 1px solid hsl(0, 0%, 85%);
+      border-bottom: 1px solid var(--light-grey);
     }
   }
 
@@ -53,11 +53,11 @@
   &__hero {
     display: flex;
     flex-direction: column;
-    padding: 0 16px;
+    padding: 0 1rem;
     flex-basis: 100%;
-    max-width: 1440px;
+    max-width: 90rem;
     @include abstracts.breakpointUp(small) {
-      padding: 0 32px;
+      padding: 0 2rem;
     }
   }
 
@@ -70,7 +70,7 @@
       flex-direction: row;
     }
     @include abstracts.breakpointUp(large) {
-      padding: 64px 0 80px 0;
+      padding: 4rem 0 5rem 0;
       flex-direction: row;
     }
   }
@@ -161,7 +161,7 @@
     @include abstracts.breakpointUp(medium) {
       display: block;
       margin-top: 1rem;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: var(--body-font);
       font-size: 0.8rem;
       font-weight: 400;
       line-height: 0.75rem;
@@ -215,7 +215,7 @@
       margin-bottom: 2.5rem;
     }
     @include abstracts.breakpointUp(large) {
-      margin-bottom: 65px;
+      margin-bottom: 4rem;
     }
   }
 
@@ -228,7 +228,7 @@
     &:not(:last-child) {
       margin-right: 1.75rem;
       @include abstracts.breakpointUp(large) {
-        margin-right: 48px;
+        margin-right: 3rem;
       }
     }
   }

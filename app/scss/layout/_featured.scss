@@ -1,0 +1,140 @@
+@use '../abstracts';
+
+.featured {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--black);
+    &--no-border {
+      border-bottom: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    max-width: 90rem;
+    flex-direction: column;
+    flex-basis: 100%;
+    padding: 2.5rem 1rem;
+    @include abstracts.breakpointUp(small) {
+      padding: 2.5rem 2rem;
+    }
+    @include abstracts.breakpointUp(medium) {
+      flex-direction: row;
+      padding: 4rem 2rem;
+    }
+    &--reversed {
+      @include abstracts.breakpointUp(medium) {
+        flex-direction: row-reverse;
+        padding: 4rem 4rem 4rem 2rem;
+      }
+      @include abstracts.breakpointUp(large) {
+        padding: 4rem 2rem;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+    @include abstracts.breakpointUp(small) {
+      margin-bottom: 4rem;
+    }
+    @include abstracts.breakpointUp(medium) {
+      flex-basis: 40%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: 80%;
+    //padding: 1rem;
+    height: auto;
+    @include abstracts.breakpointUp(xsmall) {
+      width: 70%;
+    }
+    @include abstracts.breakpointUp(small) {
+      width: 60%;
+    }
+    @include abstracts.breakpointUp(medium) {
+      width: 100%;
+    }
+    &--reversed {
+      width: 100%;
+      @include abstracts.breakpointUp(small) {
+        width: 65%;
+      }
+      @include abstracts.breakpointUp(medium) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    @include abstracts.breakpointUp(medium) {
+      flex-basis: 65%;
+      justify-content: center;
+      margin-bottom: 0;
+      padding-left: 4rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      flex-basis: 60%;
+      padding-left: 6rem;
+    }
+    &--reversed {
+      @include abstracts.breakpointUp(medium) {
+        padding-right: 4rem;
+        padding-left: 2rem;
+      }
+      @include abstracts.breakpointUp(large) {
+        padding-left: 4rem;
+      }
+    }
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    &--broken {
+      display: none;
+    }
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    @include abstracts.breakpointUp(xsmall) {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    @include abstracts.breakpointUp(small) {
+      font-size: 1.2rem;
+      &--broken {
+        display: block;
+      }
+    }
+    @include abstracts.breakpointUp(medium) {
+      font-size: 1rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__terms-text {
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    @include abstracts.breakpointUp(medium) {
+      font-size: 0.8rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      font-size: 0.85rem;
+      margin-top: 0.6rem;
+    }
+  }
+}

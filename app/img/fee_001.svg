@@ -11,7 +11,7 @@
       }
 
       .cls-4 {
-        stroke-width: .58px;
+        stroke-width: 1px;
       }
 
       .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-2 {
@@ -99,7 +99,7 @@
       }
 
       .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-36, .cls-25, .cls-2 {
-        stroke-width: .5px;
+        stroke-width: 1px;
       }
 
       .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-14, .cls-2 {
@@ -131,7 +131,7 @@
       }
 
       .cls-32 {
-        stroke-width: .44px;
+        stroke-width: 1px;
       }
 
       .cls-32, .cls-36, .cls-25 {

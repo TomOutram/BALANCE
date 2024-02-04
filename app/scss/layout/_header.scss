@@ -1,22 +1,20 @@
-@use '../abstracts';
+@use "../abstracts";
 
 .header {
   // ----- background
-  border-bottom: 1px solid var(--black);
-  background-color: var(--light-blue);
-  @include abstracts.breakpointUp(medium) {
-    background-image: url('/app/img/hero-circle.svg');
-    background-repeat: no-repeat;
-    background-position-x: calc(100vw / 2);
-    background-position-y: 50%;
-    background-size: 93.75rem;
-  }
+  // @include abstracts.breakpointUp(medium) {
+  //   background-image: url("/app/img/hero-circle.svg");
+  //   background-repeat: no-repeat;
+  //   background-position-x: calc(100vw / 2);
+  //   background-position-y: 50%;
+  //   background-size: 93.75rem;
+  // }
 
   // ----- nav
   &__nav-wrapper {
     display: flex;
     justify-content: center;
-    @include abstracts.breakpointUp(large) {
+    @include abstracts.breakpointUp(medium) {
       border-bottom: 1px solid var(--light-grey);
     }
   }
@@ -24,8 +22,11 @@
   &__nav {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0 0.5rem;
+    padding: 2rem 0 1.5rem;
     max-width: 90rem;
+    @include abstracts.breakpointUp(small) {
+      padding: 2rem 0 2rem;
+    }
     @include abstracts.breakpointUp(medium) {
       flex-basis: 100%;
       padding: 1.5rem 2rem;
@@ -64,7 +65,6 @@
   &__hero-cta-wrapper {
     display: flex;
     flex-direction: column-reverse;
-    padding: 1rem 0 5rem 0;
     @include abstracts.breakpointUp(medium) {
       padding: 2.5rem 0 4rem 0;
       flex-direction: row;
@@ -170,7 +170,7 @@
     }
     @include abstracts.breakpointUp(large) {
       margin-top: 1.5rem;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: "Noto Sans", sans-serif;
       font-size: 0.9rem;
     }
   }

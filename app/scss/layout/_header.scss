@@ -2,13 +2,16 @@
 
 .header {
   // ----- background
-  // @include abstracts.breakpointUp(medium) {
-  //   background-image: url("/app/img/hero-circle.svg");
-  //   background-repeat: no-repeat;
-  //   background-position-x: calc(100vw / 2);
-  //   background-position-y: 50%;
-  //   background-size: 93.75rem;
-  // }
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--black);
+  background-color: var(--light-blue);
+  @include abstracts.breakpointUp(medium) {
+    background-image: url("/app/img/hero-circle.svg");
+    background-repeat: no-repeat;
+    background-position-x: calc(100vw / 2);
+    background-position-y: 50%;
+    background-size: 93.75rem;
+  }
 
   // ----- nav
   &__nav-wrapper {
@@ -49,187 +52,374 @@
   &__hero-wrapper {
     display: flex;
     justify-content: center;
+    padding: 0 1rem 3rem 1rem;
+    @include abstracts.breakpointUp(xsmall) {
+      padding: 0 2rem 4rem 2rem;
+    }
+    @include abstracts.breakpointUp(medium) {
+      padding: 2.5rem 2rem 4rem 2rem;
+    }
+    @include abstracts.breakpointUp(large) {
+      padding: 6rem 2rem 6rem 2rem;
+    }
   }
 
   &__hero {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
-    flex-basis: 100%;
     max-width: 90rem;
-    @include abstracts.breakpointUp(small) {
-      padding: 0 2rem;
-    }
-  }
-
-  &__hero-cta-wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    @include abstracts.breakpointUp(medium) {
-      padding: 2.5rem 0 4rem 0;
-      flex-direction: row;
-    }
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "title title"
+      "supporting supporting"
+      "image image"
+      "button button";
     @include abstracts.breakpointUp(large) {
-      padding: 4rem 0 5rem 0;
-      flex-direction: row;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto 1fr;
+      grid-template-areas:
+        "title image"
+        "supporting image"
+        "button image";
     }
   }
 
-  &__hero-cta-container {
-    margin-right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-basis: 100%;
-    @include abstracts.breakpointUp(medium) {
-      flex-basis: 50%;
-      padding-right: 2rem;
-    }
-    @include abstracts.breakpointUp(large) {
-      flex-basis: 45%;
-      padding-right: 1.5rem;
-    }
-  }
-
-  &__hero-cta-headline {
-    margin: 2.5rem 0 1rem 0;
+  // # Title
+  &__hero-heading {
+    grid-area: title;
+    font-size: 2rem;
     text-align: center;
-    @include abstracts.breakpointUp(medium) {
-      text-align: left;
-      margin-top: 0;
+    letter-spacing: 0.1875rem;
+    margin: 0 0 0.5rem 0;
+    @include abstracts.breakpointUp(small) {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
     @include abstracts.breakpointUp(large) {
-      margin-bottom: 1.5rem;
+      font-size: 3.75rem;
+      text-align: left;
+      align-self: flex-end;
     }
   }
 
-  &__hero-cta-headline--sm {
-    display: block;
-    margin-top: 0;
-    @include abstracts.breakpointUp(medium) {
-      display: none;
+  // # Supporting text
+  &__hero-supporting-txt-container {
+    grid-area: supporting;
+    margin-bottom: 2.5rem;
+    @include abstracts.breakpointUp(large) {
+      margin: 0;
     }
   }
 
-  &__hero-cta-headline--lg {
-    display: none;
-    @include abstracts.breakpointUp(medium) {
-      display: block;
-    }
-  }
-
-  &__cta-supporting-container {
-    margin-bottom: 1.5rem;
-    @include abstracts.breakpointUp(medium) {
-      margin-bottom: 2rem;
+  &__hero-supporting-txt {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    @include abstracts.breakpointUp(small) {
+      font-size: 1.25rem;
     }
     @include abstracts.breakpointUp(large) {
-      margin-bottom: 3.5rem;
-    }
-  }
-
-  &__cta-supporting {
-    flex-basis: 100%;
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.4;
-    text-align: center;
-    @include abstracts.breakpointUp(small) {
-      font-size: 1.4rem;
-    }
-    @include abstracts.breakpointUp(medium) {
-      font-size: 1rem;
-      line-height: 1.1;
+      font-size: 1.5rem;
       text-align: left;
     }
-    @include abstracts.breakpointUp(large) {
-      font-size: 1.3rem;
-      line-height: 1.4;
-    }
   }
 
-  &__cta-btn {
-    align-self: center;
-    @include abstracts.breakpointUp(medium) {
-      align-self: start;
-    }
-  }
-
-  &__cta-btn-tip {
-    display: none;
-    @include abstracts.breakpointUp(medium) {
-      display: block;
-      margin-top: 1rem;
-      font-family: var(--body-font);
-      font-size: 0.8rem;
-      font-weight: 400;
-      line-height: 0.75rem;
-      letter-spacing: 0.075rem;
-      color: var(--dark-grey);
-    }
-    @include abstracts.breakpointUp(large) {
-      margin-top: 1.5rem;
-      font-family: "Noto Sans", sans-serif;
-      font-size: 0.9rem;
-    }
-  }
-
-  &__hero-image-wrapper {
+  // # Button
+  &__hero-cta-container {
+    grid-area: button;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-basis: 100%;
-    @include abstracts.breakpointUp(medium) {
-      flex-basis: 50%;
-    }
+    justify-content: start;
+  }
+
+  &__hero-btn {
+    display: inline-block;
+    margin: 0 0 1.5rem 0;
+    align-self: center;
     @include abstracts.breakpointUp(large) {
-      flex-basis: 55%;
+      align-self: start;
+      margin: 3rem 0 1.5rem 0;
+    }
+  }
+
+  &__hero-btn-tip {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    color: var(--medium-grey);
+    @include abstracts.breakpointUp(large) {
+      text-align: left;
+    }
+  }
+
+  // # Image
+  &__hero-image-container {
+    grid-area: image;
+    margin: 0 1rem 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    @include abstracts.breakpointUp(small) {
+      margin: 0 2rem 2.5rem 2rem;
     }
   }
 
   &__hero-image {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    align-self: center;
-    @include abstracts.breakpointUp(xsmall) {
-      width: 90%;
-    }
-    @include abstracts.breakpointUp(small) {
-      width: 80%;
-    }
-    @include abstracts.breakpointUp(medium) {
-      width: 100%;
-    }
+    flex-grow: 1;
+    max-width: 28rem;
     @include abstracts.breakpointUp(large) {
-      width: 90%;
+      max-width: 37.5rem;
     }
   }
 
+  // # Affiliate logos
   &__affiliates-wrapper {
-    display: none;
-    @include abstracts.breakpointUp(medium) {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__affiliates {
+    max-width: 90rem;
+    margin: 0 2rem;
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "logo1 logo2"
+      "logo3 logo4";
+    @include abstracts.breakpointUp(xsmall) {
+      margin: 0 3rem;
     }
-    @include abstracts.breakpointUp(large) {
-      margin-bottom: 4rem;
+    @include abstracts.breakpointUp(small) {
+      margin: 0 2rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "logo1 logo2 logo3 logo4";
+      column-gap: 1.25rem;
+      align-items: center;
+    }
+    @include abstracts.breakpointUp(medium) {
+      column-gap: 4rem;
     }
   }
 
   &__affiliate-logo {
-    height: 1.8rem;
-    width: auto;
-    @include abstracts.breakpointUp(large) {
-      height: 2.2rem;
-    }
-    &:not(:last-child) {
-      margin-right: 1.75rem;
-      @include abstracts.breakpointUp(large) {
-        margin-right: 3rem;
-      }
+    max-width: 150px;
+  }
+
+  &__affiliates :nth-child(1) {
+    grid-area: logo1;
+    justify-self: flex-end;
+    @include abstracts.breakpointUp(medium) {
+      justify-self: flex-start;
     }
   }
+
+  &__affiliates :nth-child(2) {
+    grid-area: logo2;
+  }
+
+  &__affiliates :nth-child(3) {
+    grid-area: logo3;
+    justify-self: flex-end;
+    @include abstracts.breakpointUp(medium) {
+      justify-self: flex-start;
+    }
+  }
+
+  &__affiliates :nth-child(4) {
+    grid-area: logo4;
+  }
+
+  // ----- hero
+  // &__hero-wrapper {
+  //   display: flex;
+  //   justify-content: center;
+  // }
+
+  // &__hero {
+  //   display: flex;
+  //   flex-direction: column;
+  //   padding: 0 1rem;
+  //   flex-basis: 100%;
+  //   max-width: 90rem;
+  //   @include abstracts.breakpointUp(small) {
+  //     padding: 0 2rem;
+  //   }
+  // }
+
+  // &__hero-cta-wrapper {
+  //   display: flex;
+  //   flex-direction: column-reverse;
+  //   @include abstracts.breakpointUp(medium) {
+  //     padding: 2.5rem 0 4rem 0;
+  //     flex-direction: row;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     padding: 4rem 0 5rem 0;
+  //     flex-direction: row;
+  //   }
+  // }
+
+  // &__hero-cta-container {
+  //   margin-right: 0;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   flex-basis: 100%;
+  //   @include abstracts.breakpointUp(medium) {
+  //     flex-basis: 50%;
+  //     padding-right: 2rem;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     flex-basis: 45%;
+  //     padding-right: 1.5rem;
+  //   }
+  // }
+
+  // &__hero-cta-headline {
+  //   margin: 2.5rem 0 1rem 0;
+  //   text-align: center;
+  //   @include abstracts.breakpointUp(medium) {
+  //     text-align: left;
+  //     margin-top: 0;
+  //     margin-bottom: 1rem;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     margin-bottom: 1.5rem;
+  //   }
+  // }
+
+  // &__hero-cta-headline--sm {
+  //   display: block;
+  //   margin-top: 0;
+  //   @include abstracts.breakpointUp(medium) {
+  //     display: none;
+  //   }
+  // }
+
+  // &__hero-cta-headline--lg {
+  //   display: none;
+  //   @include abstracts.breakpointUp(medium) {
+  //     display: block;
+  //   }
+  // }
+
+  // &__cta-supporting-container {
+  //   margin-bottom: 1.5rem;
+  //   @include abstracts.breakpointUp(medium) {
+  //     margin-bottom: 2rem;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     margin-bottom: 3.5rem;
+  //   }
+  // }
+
+  // &__cta-supporting {
+  //   flex-basis: 100%;
+  //   font-size: 1.1rem;
+  //   font-weight: 400;
+  //   line-height: 1.4;
+  //   text-align: center;
+  //   @include abstracts.breakpointUp(small) {
+  //     font-size: 1.4rem;
+  //   }
+  //   @include abstracts.breakpointUp(medium) {
+  //     font-size: 1rem;
+  //     line-height: 1.1;
+  //     text-align: left;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     font-size: 1.3rem;
+  //     line-height: 1.4;
+  //   }
+  // }
+
+  // &__cta-btn {
+  //   align-self: center;
+  //   @include abstracts.breakpointUp(medium) {
+  //     align-self: start;
+  //   }
+  // }
+
+  // &__cta-btn-tip {
+  //   display: none;
+  //   @include abstracts.breakpointUp(medium) {
+  //     display: block;
+  //     margin-top: 1rem;
+  //     font-family: var(--body-font);
+  //     font-size: 0.8rem;
+  //     font-weight: 400;
+  //     line-height: 0.75rem;
+  //     letter-spacing: 0.075rem;
+  //     color: var(--dark-grey);
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     margin-top: 1.5rem;
+  //     font-family: "Noto Sans", sans-serif;
+  //     font-size: 0.9rem;
+  //   }
+  // }
+
+  // &__hero-image-wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   flex-basis: 100%;
+  //   @include abstracts.breakpointUp(medium) {
+  //     flex-basis: 50%;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     flex-basis: 55%;
+  //   }
+  // }
+
+  // &__hero-image {
+  //   width: 100%;
+  //   padding: 1rem;
+  //   margin-bottom: 0.5rem;
+  //   align-self: center;
+  //   @include abstracts.breakpointUp(xsmall) {
+  //     width: 90%;
+  //   }
+  //   @include abstracts.breakpointUp(small) {
+  //     width: 80%;
+  //   }
+  //   @include abstracts.breakpointUp(medium) {
+  //     width: 100%;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     width: 90%;
+  //   }
+  // }
+
+  // &__affiliates-wrapper {
+  //   display: none;
+  //   @include abstracts.breakpointUp(medium) {
+  //     display: flex;
+  //     justify-content: center;
+  //     margin-bottom: 2.5rem;
+  //   }
+  //   @include abstracts.breakpointUp(large) {
+  //     margin-bottom: 4rem;
+  //   }
+  // }
+
+  // &__affiliate-logo {
+  //   height: 1.8rem;
+  //   width: auto;
+  //   @include abstracts.breakpointUp(large) {
+  //     height: 2.2rem;
+  //   }
+  //   &:not(:last-child) {
+  //     margin-right: 1.75rem;
+  //     @include abstracts.breakpointUp(large) {
+  //       margin-right: 3rem;
+  //     }
+  //   }
+  // }
 }

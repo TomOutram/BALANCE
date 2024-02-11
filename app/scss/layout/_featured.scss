@@ -1,7 +1,6 @@
 @use "../abstracts";
 
 .featured {
-  border-bottom: 1px solid var(--black);
   @include abstracts.breakpointUp(large) {
     display: flex;
     justify-content: center;
@@ -10,6 +9,7 @@
     padding: 3rem 1rem;
     max-width: 90rem;
     gap: 3rem;
+    border-bottom: 1px solid var(--black);
     @include abstracts.breakpointUp(xsmall) {
       padding: 3rem 2rem;
     }
@@ -32,6 +32,9 @@
         justify-content: center;
         flex-direction: row-reverse;
       }
+    }
+    &--no-border {
+      border: 0;
     }
   }
 

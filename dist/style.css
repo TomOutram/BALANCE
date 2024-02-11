@@ -333,9 +333,6 @@ img {
   grid-area: logo4;
 }
 
-.featured {
-  border-bottom: 1px solid var(--black);
-}
 @media (min-width: 62em) {
   .featured {
     display: flex;
@@ -346,6 +343,7 @@ img {
   padding: 3rem 1rem;
   max-width: 90rem;
   gap: 3rem;
+  border-bottom: 1px solid var(--black);
 }
 @media (min-width: 23.4375em) {
   .featured__wrapper {
@@ -377,6 +375,9 @@ img {
     justify-content: center;
     flex-direction: row-reverse;
   }
+}
+.featured__wrapper--no-border {
+  border: 0;
 }
 .featured__image-wrapper {
   margin-bottom: 2.5rem;
@@ -477,6 +478,89 @@ img {
   .featured__terms-text {
     text-align: left;
   }
+}
+
+.selling-points {
+  padding: 0 1rem 3rem 1rem;
+}
+.selling-points__container {
+  border-top: 1px solid var(--light-grey);
+}
+.selling-points__accordion-btn {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.5rem;
+  width: 100%;
+  color: var(--text-colour);
+  border: none;
+  border-bottom: 1px solid var(--light-grey);
+  transition: 0.2s;
+  background-color: var(--off-white);
+  cursor: pointer;
+}
+.selling-points__accordion-btn:hover {
+  color: var(--balance-blue-hover);
+}
+.selling-points__accordion-btn:hover .selling-points__accordion-icon-highlight {
+  display: block;
+}
+.selling-points__accordion-btn.active .selling-points__accordion-btn-icon-container {
+  rotate: 45deg;
+}
+.selling-points__accordion-btn-text {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--body-font);
+  line-height: 1.1;
+  letter-spacing: 0.03125rem;
+}
+.selling-points__accordion-btn-icon-container {
+  width: 1.125rem;
+  height: 1.125rem;
+  position: absolute;
+  right: 11px;
+  top: 24.3px;
+  z-index: 2;
+  transition: 0.2s ease;
+}
+.selling-points__accordion-icon-highlight {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 300px;
+  background-color: var(--light-blue);
+  position: absolute;
+  right: 0;
+  top: 13.3px;
+  z-index: 1;
+}
+.selling-points__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-blue);
+  border-radius: 0.25rem;
+  text-align: center;
+}
+.selling-points__content-img-container {
+  margin: 2rem 1rem 1rem 1rem;
+  max-width: 12.5rem;
+}
+@media (min-width: 23.4375em) {
+  .selling-points__content-img-container {
+    max-width: 15.625rem;
+  }
+}
+.selling-points__content-txt {
+  margin: 0 0 1rem 0;
+}
+
+.active {
+  border-bottom: 0;
 }
 
 .btn {

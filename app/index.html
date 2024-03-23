@@ -25,7 +25,7 @@
         <nav class="header__nav">
           <a class="header__logo-container" href="#">
             <img
-              class="logo balance-simple-img"
+              class="logo img balance-simple-img"
               src="img/balance-logo.svg"
               alt="balance-property-logo"
             />
@@ -34,21 +34,21 @@
           <div class="header__social-container">
             <a class="social-link" href="#">
               <img
-                class="social-link__img"
+                class="img social-link__img"
                 src="img/facebook-logo.svg"
                 alt="Facebook logo"
               />
             </a>
             <a class="social-link" href="#">
               <img
-                class="social-link__img"
+                class="img social-link__img"
                 src="img/twitter-logo.svg"
                 alt="Twitter logo"
               />
             </a>
             <a class="social-link" href="#">
               <img
-                class="social-link__img"
+                class="img social-link__img"
                 src="img/instagram-logo.svg"
                 alt="Instagram logo"
               />
@@ -82,6 +82,7 @@
               <img
                 src="img/header-house.svg"
                 alt="Symbolic image of a house that is subject to a range property services"
+                class="img"
               />
             </div>
           </div>
@@ -92,22 +93,22 @@
       <div class="header__affiliates-wrapper">
         <div class="header__affiliates">
           <img
-            class="header__affiliate-logo"
+            class="img header__affiliate-logo"
             src="img/affiliate-logo-01.svg"
             alt="NZ Housing Society logo"
           />
           <img
-            class="header__affiliate-logo"
+            class="img header__affiliate-logo"
             src="img/affiliate-logo-04.svg"
             alt="REALENZ logo"
           />
           <img
-            class="header__affiliate-logo"
+            class="img header__affiliate-logo"
             src="img/affiliate-logo-02.svg"
             alt="RIA NZ logo"
           />
           <img
-            class="header__affiliate-logo"
+            class="img header__affiliate-logo"
             src="img/affiliate-logo-03.svg"
             alt="New Zealand Property Group logo"
           />
@@ -120,7 +121,7 @@
       <div class="featured__wrapper">
         <div class="featured__image-wrapper">
           <img
-            class="featured__image"
+            class="img featured__image"
             src="img/fee_001.svg"
             alt="Symbolic image of money flowing from a house into a wallet"
           />
@@ -141,13 +142,11 @@
     </section>
 
     <!-- ##### FEATURED - 2 ##### -->
-    <section class="featured">
-      <div
-        class="featured__wrapper featured__wrapper--no-border featured__wrapper--reversed"
-      >
+    <section class="featured featured--no-border">
+      <div class="featured__wrapper featured__wrapper--reversed">
         <div class="featured__image-wrapper">
           <img
-            class="featured__image featured__image--reversed"
+            class="img featured__image featured__image--reversed"
             src="img/rent_001.svg"
             alt="Symbolic image of money flowing from a house into a wallet"
           />
@@ -158,7 +157,14 @@
             <p class="featured__description">
               If we can't find tenants, we'll pay the rent, guaranteed.
             </p>
-            <p class="featured__terms-text">* Terms & conditions apply</p>
+            <div class="featured__terms-text-container">
+              <img
+                class="icon-small"
+                src="img/info.svg"
+                alt="information icon"
+              />
+              <span class="featured__terms-text">Terms & conditions apply</span>
+            </div>
           </div>
         </div>
       </div>
@@ -166,21 +172,25 @@
 
     <!-- ##### SELLING POINTS ##### -->
     <section class="selling-points">
-      <div class="selling-points__container">
+      <!--------------------------- MOBILE ----------------------------------->
+      <div class="selling-points__container-mobile">
         <!-- item 1 -->
         <button class="selling-points__accordion-btn">
           <div class="selling-points__accordion-icon-highlight"></div>
           <span class="selling-points__accordion-btn-text">Market experts</span>
           <div class="selling-points__accordion-btn-icon-container">
             <img
-              class="selling-points__accordion-btn-icon"
+              class="img selling-points__accordion-btn-icon"
               src="img/acc-icon.svg"
             />
           </div>
         </button>
         <div class="selling-points__content">
           <div class="selling-points__content-img-container">
-            <img class="selling-points__content-img" src="img/market_002.svg" />
+            <img
+              class="img selling-points__content-img"
+              src="img/market_002.svg"
+            />
           </div>
           <p class="selling-points__content-txt">
             We know Canterbury real estate.
@@ -196,14 +206,17 @@
           >
           <div class="selling-points__accordion-btn-icon-container">
             <img
-              class="selling-points__accordion-btn-icon"
+              class="img selling-points__accordion-btn-icon"
               src="img/acc-icon.svg"
             />
           </div>
         </button>
         <div class="selling-points__content">
           <div class="selling-points__content-img-container">
-            <img class="selling-points__content-img" src="img/phone_001.svg" />
+            <img
+              class="img selling-points__content-img"
+              src="img/phone_001.svg"
+            />
           </div>
           <p class="selling-points__content-txt">
             We’re there when you call, keeping you updated at all times.
@@ -217,7 +230,7 @@
           >
           <div class="selling-points__accordion-btn-icon-container">
             <img
-              class="selling-points__accordion-btn-icon"
+              class="img selling-points__accordion-btn-icon"
               src="img/acc-icon.svg"
             />
           </div>
@@ -225,7 +238,7 @@
         <div class="selling-points__content">
           <div class="selling-points__content-img-container">
             <img
-              class="selling-points__content-img"
+              class="img selling-points__content-img"
               src="img/approve_001.svg"
             />
           </div>
@@ -233,6 +246,48 @@
             We make it easy to keep your property safe, secure, and livable for
             tenants.
           </p>
+        </div>
+      </div>
+      <!--------------------------- DESKTOP ----------------------------------->
+      <div class="selling-points__container-desktop">
+        <div class="selling-points__card-container">
+          <!-- item 1 -->
+          <div class="selling-points__card">
+            <div class="selling-points__card-img-container">
+              <img class="selling-points__card-img" src="img/market_002.svg" />
+            </div>
+            <span class="selling-points__card-title">Market experts</span>
+            <div class="selling-points__card-separator"></div>
+            <p class="selling-points__card-txt">
+              We know Canterbury real estate. Our team has over 100 years of
+              combined experience.
+            </p>
+          </div>
+          <!-- item 2 -->
+          <div class="selling-points__card">
+            <div class="selling-points__card-img-container">
+              <img class="selling-points__card-img" src="img/phone_001.svg" />
+            </div>
+            <span class="selling-points__card-title">Open communication</span>
+            <div class="selling-points__card-separator"></div>
+            <p class="selling-points__card-txt">
+              We’re there when you call, keeping you updated at all times.
+            </p>
+          </div>
+          <!-- item 3 -->
+          <div class="selling-points__card">
+            <div class="selling-points__card-img-container">
+              <img class="selling-points__card-img" src="img/approve_001.svg" />
+            </div>
+            <span class="selling-points__card-title"
+              >Compliance specialists</span
+            >
+            <div class="selling-points__card-separator"></div>
+            <p class="selling-points__card-txt">
+              We make it easy to keep your property safe, secure, and livable
+              for tenants.
+            </p>
+          </div>
         </div>
       </div>
     </section>

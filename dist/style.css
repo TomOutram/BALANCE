@@ -78,7 +78,7 @@ a:active {
   text-decoration: underline;
 }
 
-img {
+.img {
   width: 100%;
   height: auto;
 }
@@ -119,7 +119,7 @@ img {
 .header__nav {
   display: flex;
   justify-content: space-between;
-  max-width: 90rem;
+  max-width: 75rem;
 }
 @media (min-width: 48em) {
   .header__nav {
@@ -159,7 +159,7 @@ img {
   }
 }
 .header__hero {
-  max-width: 90rem;
+  max-width: 75rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
@@ -333,17 +333,22 @@ img {
   grid-area: logo4;
 }
 
+.featured {
+  border-bottom: 1px solid var(--black);
+}
 @media (min-width: 62em) {
   .featured {
     display: flex;
     justify-content: center;
   }
 }
+.featured--no-border {
+  border: 0;
+}
 .featured__wrapper {
   padding: 3rem 1rem;
-  max-width: 90rem;
+  max-width: 75rem;
   gap: 3rem;
-  border-bottom: 1px solid var(--black);
 }
 @media (min-width: 23.4375em) {
   .featured__wrapper {
@@ -375,9 +380,6 @@ img {
     justify-content: center;
     flex-direction: row-reverse;
   }
-}
-.featured__wrapper--no-border {
-  border: 0;
 }
 .featured__image-wrapper {
   margin-bottom: 2.5rem;
@@ -466,6 +468,12 @@ img {
     font-size: 1.5rem;
   }
 }
+.featured__terms-text-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
 .featured__terms-text {
   text-align: left;
 }
@@ -480,11 +488,19 @@ img {
   }
 }
 
-.selling-points {
-  padding: 0 1rem 3rem 1rem;
-}
-.selling-points__container {
+.selling-points__container-mobile {
   border-top: 1px solid var(--light-grey);
+  padding: 0 1rem;
+}
+@media (min-width: 62em) {
+  .selling-points__container-mobile {
+    display: none;
+  }
+}
+@media (min-width: 23.4375em) {
+  .selling-points__container-mobile {
+    padding: 0 2rem;
+  }
 }
 .selling-points__accordion-btn {
   position: relative;
@@ -548,15 +564,91 @@ img {
 }
 .selling-points__content-img-container {
   margin: 2rem 1rem 1rem 1rem;
-  max-width: 12.5rem;
+  width: 12.5rem;
+  height: 12.5rem;
 }
 @media (min-width: 23.4375em) {
   .selling-points__content-img-container {
-    max-width: 15.625rem;
+    width: 15.625rem;
+    height: 15.625rem;
+  }
+}
+.selling-points__content-img {
+  width: 12.5rem;
+  height: 12.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (min-width: 23.4375em) {
+  .selling-points__content-img {
+    width: 15.625rem;
+    height: 15.625rem;
   }
 }
 .selling-points__content-txt {
-  margin: 0 0 1rem 0;
+  margin: 0 1rem 2rem 1rem;
+}
+.selling-points__container-desktop {
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--light-blue);
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+@media (max-width: 61.99875em) {
+  .selling-points__container-desktop {
+    display: none;
+  }
+}
+.selling-points__card-container {
+  max-width: 75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+.selling-points__card {
+  border: 1px solid var(--black);
+  border-radius: 0.375rem;
+  background-color: var(--white);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selling-points__card-img-container {
+  margin-bottom: 1.5rem;
+}
+.selling-points__card-img {
+  height: 15.625rem;
+  width: 15.625rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 74.99875em) {
+  .selling-points__card-img {
+    height: 12.5rem;
+    width: 12.5rem;
+  }
+}
+.selling-points__card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: var(--body-font);
+  line-height: 1.1;
+  letter-spacing: 0.03125rem;
+  margin-bottom: 1rem;
+}
+.selling-points__card-separator {
+  height: 0.25rem;
+  width: 3.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--balance-blue);
+  margin-bottom: 1rem;
+}
+.selling-points__card-txt {
+  text-align: center;
+  color: var(--dark-grey);
 }
 
 .active {
@@ -624,6 +716,11 @@ img {
   .logo.balance-simple-txt {
     font-size: 1.6875rem;
   }
+}
+
+.icon-small {
+  width: 1rem;
+  height: 1rem;
 }
 
 /*

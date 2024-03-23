@@ -8,27 +8,27 @@ for (let i = 0; i < accordion.length; i++) {
     for (let i = 0; i < accordion.length; i++) {
       // get the content block for each item
       let accordionContent = accordion[i].nextElementSibling;
-      // NOT the button we click - ACTIVE - close it
+      // if NOT clicked button - ACTIVE - close it
       if (
         accordion[i] !== button &&
         accordion[i].classList.contains("active")
       ) {
         accordion[i].classList.toggle("active");
         accordionContent.style.maxHeight = null;
-        // NOT the button we click - NOT ACTIVE - stay closed
+        // if NOT clicked button - NOT ACTIVE - stay closed
       } else if (
         accordion[i] !== button &&
         !accordion[i].classList.contains("active")
       ) {
         accordionContent.style.maxHeight = null;
-        // IS the button we click - ACTIVE - close it
+        // if IS clicked button - ACTIVE - close it
       } else if (
         accordion[i] === button &&
         accordion[i].classList.contains("active")
       ) {
         accordion[i].classList.toggle("active");
         accordionContent.style.maxHeight = null;
-        // IS the button we click - NOT ACTIVE - open it
+        // if IS clicked button - NOT ACTIVE - open it
       } else {
         accordion[i].classList.toggle("active");
         accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";

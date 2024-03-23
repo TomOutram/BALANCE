@@ -1,15 +1,18 @@
 @use "../abstracts";
 
 .featured {
+  border-bottom: 1px solid var(--black);
   @include abstracts.breakpointUp(large) {
     display: flex;
     justify-content: center;
   }
+  &--no-border {
+    border: 0;
+  }
   &__wrapper {
     padding: 3rem 1rem;
-    max-width: 90rem;
+    max-width: 75rem;
     gap: 3rem;
-    border-bottom: 1px solid var(--black);
     @include abstracts.breakpointUp(xsmall) {
       padding: 3rem 2rem;
     }
@@ -32,9 +35,6 @@
         justify-content: center;
         flex-direction: row-reverse;
       }
-    }
-    &--no-border {
-      border: 0;
     }
   }
 
@@ -104,6 +104,13 @@
     @include abstracts.breakpointUp(xlarge) {
       font-size: 1.5rem;
     }
+  }
+
+  &__terms-text-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
   }
 
   &__terms-text {

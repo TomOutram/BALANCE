@@ -33,7 +33,7 @@
   &__nav {
     display: flex;
     justify-content: space-between;
-    max-width: 90rem;
+    max-width: 75rem;
     @include abstracts.breakpointUp(medium) {
       flex-basis: 100%;
     }
@@ -68,7 +68,7 @@
   }
 
   &__hero {
-    max-width: 90rem;
+    max-width: 75rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;

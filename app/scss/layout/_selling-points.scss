@@ -3,6 +3,7 @@
 .selling-points {
   // mobile accordion
   &__container-mobile {
+    padding: 0 1rem;
     @include abstracts.breakpointUp(large) {
       display: none;
     }
@@ -10,7 +11,6 @@
       padding: 0 2rem;
     }
     border-top: 1px solid var(--light-grey);
-    padding: 0 1rem;
   }
   &__accordion-btn {
     position: relative;
@@ -36,7 +36,7 @@
   }
   &__accordion-btn-text {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     font-family: var(--body-font);
     line-height: 1.1;
     letter-spacing: 0.03125rem;

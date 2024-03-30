@@ -4,13 +4,14 @@
   // mobile accordion
   &__container-mobile {
     padding: 0 1rem;
+    margin-bottom: 3rem;
+    @include abstracts.breakpointUp(xsmall) {
+      margin-bottom: 4rem;
+      padding: 0 2rem;
+    }
     @include abstracts.breakpointUp(large) {
       display: none;
     }
-    @include abstracts.breakpointUp(xsmall) {
-      padding: 0 2rem;
-    }
-    border-top: 1px solid var(--light-grey);
   }
   &__accordion-btn {
     position: relative;
@@ -98,6 +99,9 @@
     @include abstracts.breakpointDown(large) {
       display: none;
     }
+    @include abstracts.breakpointUp(large) {
+      margin-bottom: 4rem;
+    }
     padding: 3rem 2rem;
     display: flex;
     justify-content: center;
@@ -155,4 +159,8 @@
 
 .active {
   border-bottom: 0;
+}
+
+.selling-points__container-mobile > .selling-points__accordion-btn:first-child {
+  border-top: 1px solid var(--light-grey);
 }

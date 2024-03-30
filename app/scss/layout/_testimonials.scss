@@ -6,11 +6,16 @@
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
+  margin-bottom: 10rem;
   @include abstracts.breakpointUp(xsmall) {
     padding: 0 2rem;
   }
   &__content-wrapper {
     max-width: 100%;
+    margin-bottom: 2rem;
+    @include abstracts.breakpointUp(medium) {
+      margin-bottom: 4rem;
+    }
     @include abstracts.breakpointUp(xlarge) {
       max-width: 75rem;
     }
@@ -28,9 +33,21 @@
   }
   &__card-container {
     width: 100%;
-    display: flex;
-    gap: 2rem;
     overflow: hidden;
+    // display: flex;
+    // gap: 1.5rem;
+    // overflow: hidden;
+    // @include abstracts.breakpointUp(medium) {
+    //   flex-wrap: wrap;
+    // }
+  }
+  &__card-slider {
+    width: 100%;
+    display: flex;
+    @include abstracts.breakpointUp(medium) {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
   }
   &__card {
     flex-shrink: 0;
@@ -43,6 +60,9 @@
     background-color: var(--light-blue);
     @include abstracts.breakpointUp(xsmall) {
       padding: 2rem 1.5rem;
+    }
+    @include abstracts.breakpointUp(medium) {
+      flex-basis: calc(50% - 32px);
     }
   }
   &__customer-info-container {
@@ -110,6 +130,9 @@
     padding: 1.5rem 0;
     display: flex;
     justify-content: center;
+    @include abstracts.breakpointUp(medium) {
+      display: none;
+    }
   }
   &__btn {
     background-color: var(--light-grey);

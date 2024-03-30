@@ -1,4 +1,4 @@
-// -------------------- ACCORDION --------------------
+// -------------------- ACCORDION -------------------------------------------------
 // get accordion items
 const accordion = document.querySelectorAll(".selling-points__accordion-btn");
 for (let i = 0; i < accordion.length; i++) {
@@ -35,4 +35,68 @@ for (let i = 0; i < accordion.length; i++) {
       }
     }
   });
+}
+
+// -------------------- SLIDER -----------------------------------------------------
+// get slides
+const slideContainer = document.querySelector(".testimonials__card-slider");
+const slides = document.querySelectorAll(".testimonials__card");
+
+// get the slider buttons
+const buttons = document.querySelectorAll(".testimonials__btn");
+
+// initialise slide size var
+let size = slides[0].clientWidth;
+
+// initialise slide number
+let slideNumber = 0;
+
+// resize listener
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 768) {
+    slideNumber = 0;
+    updateSlides();
+  }
+  //carouselSlide.style.transition = "none";
+  size = slides[0].clientWidth;
+  updateSlides();
+});
+
+// for each button, check active status and update slides
+for (let button of buttons) {
+  button.addEventListener("click", (e) => {
+    checkBtnActiveStatus(e);
+  });
+}
+
+// check button clicked and set status
+function checkBtnActiveStatus(e) {
+  // loop through buttons
+  for (let button of buttons) {
+    // check if button is the button that has been clicked
+    if (button === e.target) {
+      // update slideNumber
+      slideNumber = Number(button.getAttribute("btnNumber"));
+      // check status of button that has been clicked
+      if (!button.classList.contains("testimonials__btn--active")) {
+        // if its not active, then set it to active
+        button.classList.toggle("testimonials__btn--active");
+        // then update the slides
+        updateSlides();
+      }
+    } else {
+      // if button is NOT the button that has been clicked,
+      // then remove active class
+      button.classList.remove("testimonials__btn--active");
+    }
+  }
+}
+
+// update slide positions
+function updateSlides() {
+  size = slides[0].clientWidth;
+  if (size > 0) {
+    size = size + 2;
+  }
+  slideContainer.style.transform = "translateX(" + -size * slideNumber + "px)";
 }
